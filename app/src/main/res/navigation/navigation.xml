@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.snilloc.mathsgamekotlin.TitleFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title" >
+        <action
+            android:id="@+id/action_titleFragment_to_startGameFragment"
+            app:destination="@id/startGameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/startGameFragment"
+        android:name="com.snilloc.mathsgamekotlin.StartGameFragment"
+        android:label="fragment_start_game"
+        tools:layout="@layout/fragment_start_game" >
+        <action
+            android:id="@+id/action_startGameFragment_to_endGameFragment"
+            app:destination="@id/endGameFragment"
+            app:popUpTo="@id/startGameFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/endGameFragment"
+        android:name="com.snilloc.mathsgamekotlin.EndGameFragment"
+        android:label="fragment_end_game"
+        tools:layout="@layout/fragment_end_game" >
+        <action
+            android:id="@+id/action_endGameFragment_to_startGameFragment"
+            app:destination="@id/startGameFragment"
+            app:popUpTo="@id/endGameFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_endGameFragment_to_titleFragment"
+            app:destination="@id/titleFragment"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
