@@ -42,5 +42,8 @@
             app:destination="@id/titleFragment"
             app:popUpTo="@id/titleFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="points"
+            app:argType="integer" />
     </fragment>
 </navigation>
